@@ -16,7 +16,7 @@ config({ path: "./config/config.env" });
 const allowedOrigins = [
   process.env.FRONTEND_URL,
   "http://localhost:3000",
-   "https://gym-fitness-hmjt-git-main-harshs-projects-30deba0c.vercel.app/"
+   "https://gym-fitness-hmjt-git-main-harshs-projects-30deba0c.vercel.app"
 ];
 
 // ✅ Dynamic CORS middleware
