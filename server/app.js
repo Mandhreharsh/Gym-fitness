@@ -46,6 +46,10 @@ app.use("/api/v1/message", messageRouter);
 app.use("/api/v1/user", userRouter);
 // app.use("/api/v1/appointment", appointmentRouter);
 
+app.get("/", (req, res) => {
+    res.send("Server is running...");
+  });
+
 dbConnection();
 
 // Error Middleware
