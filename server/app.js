@@ -12,12 +12,12 @@ import userRouter from "./router/userRouter.js";
 const app = express();
 config({ path: "./config/config.env" });
 
-// ✅ Only allow origin defined in environment variable
+// ✅ Allowed origin (your deployed frontend domain)
 const allowedOrigins = [
-  process.env.FRONTEND_URL
+  "https://gym-fitness-hmjt-harshs-projects-30deba0c.vercel.app"
 ];
 
-// ✅ Use dynamic CORS configuration
+// ✅ Dynamic CORS configuration
 app.use(
   cors({
     origin: function (origin, callback) {
@@ -27,7 +27,7 @@ app.use(
         callback(new Error("Not allowed by CORS"));
       }
     },
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
   })
 );
@@ -36,6 +36,7 @@ app.use(
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 app.use(
   fileUpload({
     useTempFiles: true,
