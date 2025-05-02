@@ -37,7 +37,7 @@ const Loginform = ({ setIsLoggedIn }) => {
         }
 
         try {
-            const response = await axios.post("http://localhost:7000/api/v1/user/login", {
+            const response = await axios.post("https://your-backend-name.onrender.com/api/v1/user/login", {
                 email: formData.email,
                 password: formData.password
             });

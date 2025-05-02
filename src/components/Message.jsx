@@ -25,7 +25,7 @@ const Message = () => {
         e.preventDefault();
         try {
             await axios.post(
-                "http://localhost:7000/api/v1/message/send",
+                "https://your-backend-name.onrender.com/api/v1/message/send",
                 { firstName, lastName, Phone, email, message },
                 {
                     withCredentials: true,
