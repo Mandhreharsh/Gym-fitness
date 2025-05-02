@@ -12,34 +12,36 @@ import userRouter from "./router/userRouter.js";
 const app = express();
 config({ path: "./config/config.env" });
 
-// ✅ Define allowed origins (add more if needed)
+// ✅ Only allow origin defined in environment variable
 const allowedOrigins = [
-  process.env.FRONTEND_URL,
-  "http://localhost:3000",
-   "https://gym-fitness-hmjt-git-main-harshs-projects-30deba0c.vercel.app"
+  process.env.FRONTEND_URL
 ];
 
-// ✅ Dynamic CORS middleware
-app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
-}));
+// ✅ Use dynamic CORS configuration
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 
+// Middlewares
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-app.use(fileUpload({
-  useTempFiles: true,
-  tempFileDir: "./tmp/"
-}));
+app.use(
+  fileUpload({
+    useTempFiles: true,
+    tempFileDir: "./tmp/",
+  })
+);
 
 // Routes
 app.use("/api/v1/message", messageRouter);
@@ -47,12 +49,13 @@ app.use("/api/v1/user", userRouter);
 // app.use("/api/v1/appointment", appointmentRouter);
 
 app.get("/", (req, res) => {
-    res.send("Server is running...");
-  });
+  res.send("Server is running...");
+});
 
+// Connect DB
 dbConnection();
 
-// Error Middleware
+// Error middleware
 app.use(errorMiddleware);
 
 export default app;
