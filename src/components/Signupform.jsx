@@ -35,7 +35,7 @@ const Signupform = ({setIsLoggedIn}) => {
         }
 
         try {
-            const response = await axios.post("https://gym-fitness-hmjt-harshs-projects-30deba0c.vercel.app/api/v1/user/patient/register", {
+            const response = await axios.post("https://gym-fitness-hmjt-harshs-projects-30deba0c.vercel.//api/v1/user/patient/register", {
                 email: formData.email,
                 password: formData.password,
                 confirmPassword: formData.confirmPassword,
