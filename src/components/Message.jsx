@@ -25,7 +25,7 @@ const Message = () => {
         e.preventDefault();
         try {
             await axios.post(
-                "https://your-backend-name.onrender.com/api/v1/message/send",
+                "https://gym-fitness-hmjt-harshs-projects-30deba0c.vercel.app/api/v1/message/send",
                 { firstName, lastName, Phone, email, message },
                 {
                     withCredentials: true,
