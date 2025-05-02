@@ -14,7 +14,7 @@ config({ path: "./config/config.env" });
 
 // ✅ Allowed origin (your deployed frontend domain)
 const allowedOrigins = [
-  "https://gym-fitness-hmjt-harshs-projects-30deba0c.vercel.app"
+  "https://gym-fitness-hmjt.vercel.app"
 ];
 
 // ✅ Dynamic CORS configuration
