@@ -1,0 +1,289 @@
+{
+    "story": [
+        {
+            "description": "Welcome to Fitness, your ultimate destination for health, strength, and transformation. Our state-of-the-art facility is designed to cater to all fitness levels, from beginners to athletes. With top-tier equipment, expert trainers, and a motivating environment, we help you achieve your goals.",
+            "description1": "At Fitness, we believe fitness is more than just a routine it's a lifestyle. Our community-driven approach ensures you stay motivated and committed to your journey. Join us today and take the first step towards a stronger, healthier you!"
+        }
+    ],
+
+    "AwsomeFeatures": [
+        {
+            "image": "assets/dumbell.png",
+            "heading": "PRO EQUIPMENT",
+            "description": "we provide commercial-grade fitness equipment to ensure a seamless workout experience.",
+            "description2": "we believe that top-quality equipment is key to achieving peak fitness performance."
+        },
+        {
+            "image": "assets/coach.png",
+            "heading": "NINJA COACH",
+            "description": "our experienced coaches are dedicated to helping you achieve your fitness goal.",
+            "description2": "our professional coaches are dedicated to helping you reach your fitness goals."
+        },
+        {
+            "image": "assets/cardio.png",
+            "heading": "CARDIO FIRST",
+            "description": "our Cardio First zone is designed to keep your heart pumping and energy soaring.",
+            "description2": "we offer a high-energy cardio training experience designed to help you burn calories."
+        },
+        {
+            "image": "assets/time.png",
+            "heading": "FLEXIBLE TIME",
+            "description": "At Finess we offer flexible gym hours to fit your lifestyle. ",
+            "description2": "we understand that everyone has a different routine, which is why we offer flexible gym hours "
+        }
+    ],
+
+    "OurClasses":[
+        {
+            "heading": "CARDIO HIIT",
+            "description" : "Unleash your full potential with Cardio HIIT (High-Intensity Interval Training) at Fitness! Designed to torch calories, improve endurance, and enhance overall fitness."
+        },
+        {
+            "heading": "BODY BUILDING",
+            "description" : "At Fitness, we provide the perfect environment for serious bodybuilders and strength athletes to train, grow, and achieve their peak physique with expert coaching."
+        },
+        {
+            "heading": "HOT YOGA",
+            "description" : "Experience the perfect blend of intensity and relaxation with Hot Yoga at Fitness. this invigorating workout enhances flexibility, detoxification, and mental clarity,"
+        }
+    ],
+
+    "OurTeam" : [
+        {
+            "description":"At Fitness, our experienced trainers are here to guide, motivate, and support you every step of the way. Whether you're looking to build strength, lose weight, improve endurance, or enhance flexibility, our experts create personalized workout plans tailored to your goals."
+        },
+        {
+             "description1":"our dedicated trainers are here to help you unlock your full potential. Whether you’re a beginner our team provides personalized guidance, expert techniques, and continuous motivation to help you achieve your fitness goals safely and effectively."
+        }
+    ],
+
+    "ClassesHeading" : [
+        {
+            "heading1": "Unleash your inner strength with our Strength Training classes! Designed to help you improve overall body composition, these sessions focus on weightlifting, and bodyweight movements",
+             "heading2": "For those seeking a customized fitness experience, our Personal Training sessions offer one-on-one guidance from expert trainers. Tailored to your unique goals."
+        }
+    ],
+
+    "ClassesList" : [
+        {
+            "image": "assets/strengthTraining.jpeg",
+            "heading": " Strength Training",
+            "description" : "Build muscle, improve endurance, and enhance overall strength with our expert weightlifting and resistance training sessions. this class focuses on progressive overload and safe lifting techniques.",
+            "btn" : "CHOOSE"
+        },
+        {
+            "image": "assets/yoga.jpg",
+            "heading": " Yoga & Flexibility",
+            "description" : "Find balance and inner peace with our Yoga & Flexibility classes. Whether you're looking to relieve stress, increase flexibility, these sessions focus on mindful breathing techniques.",
+            "btn" : "CHOOSE"
+        },
+        {
+            "image": "assets/cardio.jpg",
+            "heading": "Cardio Blast",
+            "description" : "Boost your endurance and heart health with our high-energy Cardio Blast sessions! Engage in running, cycling, and jump rope that keep your heart pumping and your energy levels high.",
+            "btn" : "CHOOSE"
+        },
+        {
+            "image": "assets/zumba.jpg",
+            "heading": "Zumba & Dance Fitness",
+            "description" : "Turn your workout into our fun and energetic Zumba & Dance Fitness classes! Move to the beat, and improve coordination while enjoying a full-body workout that feels more like a celebration.",
+            "btn" : "CHOOSE"
+        },
+        {
+            "image": "assets/functionalTraining.png",
+            "heading": "Functional Training ",
+            "description" : "Improve your daily movements and athletic performance with Functional Training. This class focuses on mobility, and strength through dynamic exercises that mimic real-life motions.",
+            "btn" : "CHOOSE"
+        },
+        {
+            "image": "assets/personalTraining.png",
+            "heading": "Personal Training",
+            "description" : "For a customized fitness approach, our Personal Training sessions one-on-one coaching tailored to your unique fitness goals. Whether you want to achive your goals our trainers are here to help.",
+            "btn" : "CHOOSE"
+        }
+    ],
+
+    "Successfull": [
+        {
+            "image": "assets/calender1.png",
+            "heading": "586",
+            "description":"Working Days"
+        },
+        {
+            "image": "assets/person.png",
+            "heading": "2,036",
+            "description":"Happy clients"
+        },
+        {
+            "image": "assets/medal.png",
+            "heading": "876",
+            "description":"Successful Stories"
+        },
+        {
+            "image": "assets/calender1.png",
+            "heading": "1,625",
+            "description":"Perfect Bodles"
+        }
+
+    ],
+
+    "Schedule" : [
+        {
+            "day" :"Monday",
+            "line1" : "-----------------------------------",
+            "time":"06:00 AM - 11:00 PM",
+            "line2": "-----------------------------------"
+        },
+        {
+            "day" :"Monday",
+            "line1" : "-----------------------------------",
+            "time":"06:00 AM - 11:00 PM",
+            "line2": "-----------------------------------"
+        },
+        {
+            "day" :"Monday",
+            "line1" : "-----------------------------------",
+            "time":"06:00 AM - 11:00 PM",
+            "line2": "-----------------------------------"
+        },
+        {
+            "day" :"Monday",
+            "line1" : "-----------------------------------",
+            "time":"06:00 AM - 11:00 PM",
+            "line2": "-----------------------------------"
+        },
+        {
+            "day" :"Monday",
+            "line1" : "-----------------------------------",
+            "time":"06:00 AM - 11:00 PM",
+            "line2": "-----------------------------------"
+        },
+        {
+            "day" :"Monday",
+            "line1" : "-----------------------------------",
+            "time":"06:00 AM - 11:00 PM",
+            "line2":  "-----------------------------------"
+        },
+        {
+            "day" :"Monday",
+            "line1" : "",
+            "time":"06:00 AM - 11:00 PM"
+        }
+    ],
+
+    "Summery" : [
+        {
+            "description":"Welcome to Fitness, where fitness meets passion! Our mission is to help you achieve your health and fitness goals in a motivating and energetic environment.."
+        },
+        {
+            "description1" : "Whether you’re a beginner or a seasoned athlete, our expert trainers, and dynamic workout programs are designed to push your limits and unlock your full potential."
+        }
+    ],
+
+    "Overview" : [
+        {
+            "description": "At Fitness, we are committed to redefining fitness with a holistic approach. Our gym is more than just a workout space it’s a community where individuals come together to build strength, endurance, and confidence."
+        },
+        {
+            "description1": "With cutting-edge equipment, expert training programs, and a motivating environment, we cater to fitness enthusiasts of all levels. Whether you're looking enhance overall wellness."
+        }
+    ],
+
+    "ContactPart" :[
+        {
+            "description": "Have questions about our gym, membership plans, or training programs? We’re here to help! Contact [Your Gym Name] today and let us assist you in starting your fitness journey."
+        },
+        {
+            "description1": " Whether you're looking for a free trial, personalized training, or general inquiries, our team is ready to guide you."
+        }
+    ],
+
+    "plan1" : [
+        {
+            "heading":"YOGA TRAINING",
+            "coach" : "Coach and Exercise",
+            "image" : "assets/rupee1.png",
+            "price":"900",
+            "price1":"10,000",
+            "month" : "per month",
+            "year" :"per year",
+            "heading2" : "Tarining Session Include",
+            "description1" : "60 Minute Sessions",
+            "description2" : "Private Gym",
+            "description3" : "Get 1-on-1 Training",
+            "btn" : "CHOOSE",
+            "image1": ""
+        }       
+    ],
+
+    "plan2" : [
+        {
+            "heading":"GROUP TRAINING",
+            "coach" : "Coach and Exercise",
+            "image" : "assets/rupee1.png",
+            "price":"800",
+            "price1":"8,000",
+            "month" : "per month",
+            "year" :"per year",
+            "heading2" : "Tarining Session Include",
+            "description1" : "60 Minute Sessions",
+            "description2" : "Private Gym",
+            "description3" : "Get 1-on-1 Training",
+            "btn" : "CHOOSE",
+            "image1" : ""
+        }       
+    ],
+
+    "MainPlan" : [
+        {
+            "smallheading" : "Most Popular",
+            "heading":"PERSONAL TRAINING",
+            "coach" : "Coach and Exercise",
+            "image" : "assets/rupee.png",
+            "price":"1500",
+            "price1":"15,000",
+            "month" : "per month",
+            "year" :"per year",
+            "heading2" : "Tarining Session Include",
+            "description1" : "60 Minute Sessions",
+            "description2" : "Private Gym",
+            "description3" : "Get 1-on-1 Training",
+            "btn" : "CHOOSE"
+        }       
+    ],
+
+    "pricingPart" :[
+        {
+            "description": "At Fitness, we believe that fitness should be accessible to everyone, which is why we offer flexible and affordable membership plans tailored to your needs."
+        },
+        {
+            "description1": "Our pricing options include monthly, quarterly, and annual memberships, giving you the flexibility to choose what works best for your lifestyle. We also offer special discounts for studentsand corporate g roups."
+        }
+    ],
+
+    "ExpertTrainers" : [
+        {
+            "image": "./assets/trainer1.png",
+            "name" : "Henry Joseph",
+            "profession" : "Gym Trainer"
+        },
+        {
+            "image": "./assets/trainer21.png",
+            "name" : "John D.",
+            "profession" : "Gym Trainer"
+        },
+        {
+            "image": "./assets/trainer31.png",
+            "name" : "Michael S.",
+            "profession" : "Gym Trainer"
+        },
+        {
+            "image": "./assets/trainer4.png",
+            "name" : "Mark Reynolds ",
+            "profession" : "Gym Trainer"
+        }
+    ]
+
+
+
+}
