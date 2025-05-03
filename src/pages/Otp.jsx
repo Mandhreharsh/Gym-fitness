@@ -14,7 +14,7 @@ const Otp = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("https://your-backend-url.com/api/v1/user/verify-otp", {
+      const res = await axios.post("https://gym-fitness-2cj9.onrender.com/api/v1/user/verify-otp", {
         email,
         otp,
       });
