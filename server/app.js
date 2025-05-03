@@ -10,12 +10,10 @@ import userRouter from "./router/userRouter.js";
 // import appointmentRouter from "./router/appointmentRouter.js";
 
 const app = express();
-config({ path: "./config/config.env" });
+config({ path: ".env" });
 
 // ✅ Allowed origin (your deployed frontend domain)
-const allowedOrigins = [
-  "https://gym-fitness-hmjt.vercel.app"
-];
+const allowedOrigins = process.env.ALLOWED_ORIGINS
 
 // ✅ Dynamic CORS configuration
 app.use(
