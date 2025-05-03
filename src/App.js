@@ -1,5 +1,5 @@
 import './App.css';
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -9,19 +9,22 @@ import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useState } from 'react';
 import ScrollToTop from "./components/ScrollToTop";
 import Otp from './pages/Otp';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [loading, setLoading] = useState(true); // <-- to handle loading state
+  const location = useLocation();
+
+  // Hide Navbar on /otp route
+  const hideNavbar = location.pathname === "/otp";
 
   return (
     <div>
-      {/* Show Navbar only if user is logged in */}
-      {isLoggedIn && <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />}
+      {!hideNavbar && isLoggedIn && (
+        <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+      )}
 
       <ScrollToTop />
 
