@@ -12,7 +12,9 @@ const app = express();
 config({ path: ".env" });
 
 const allowedOrigins = [
-  "https://gym-fitness-hmjt.vercel.app"
+  "https://gym-fitness-hmjt.vercel.app", {
+    withCredentials: true,
+  }
 ];
 
 app.use(
