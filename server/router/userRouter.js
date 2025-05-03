@@ -8,7 +8,7 @@ const router = express.Router();
 router.post("/patient/register", Register);
 router.post("/login", login);
 router.get("/patient/logout", Logout);
-router.post('/user/verify-otp', verifyOtp);
+router.post('/verify-otp', verifyOtp);
 
 
 export default router;
