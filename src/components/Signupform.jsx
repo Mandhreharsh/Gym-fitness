@@ -44,6 +44,7 @@ const Signupform = ({ setIsLoggedIn }) => {
             toast.success(response.data.message);
             setIsLoggedIn(false);
             navigate("/login");
+            navigate("/otp", { state: { email: formData.email } });
 
         } catch (error) {
             toast.error(error.response?.data?.message || "Signup failed");

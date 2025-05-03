@@ -12,29 +12,11 @@ import Signup from "./pages/Signup";
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import ScrollToTop from "./components/ScrollToTop";
+import Otp from './pages/Otp';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loading, setLoading] = useState(true); // <-- to handle loading state
-
-  // Check login status when app loads
-  useEffect(() => {
-    const checkLogin = async () => {
-      try {
-        const res = await axios.get("https://gym-fitness-2cj9.onrender.com/api/v1/user/me", {
-          withCredentials: true,
-        });
-        setIsLoggedIn(true);
-      } catch (err) {
-        setIsLoggedIn(false);
-      } finally {
-        setLoading(false);
-      }
-    };
-    checkLogin();
-  }, []);
-
-  if (loading) return <div>Loading...</div>; // Optional: customize this
 
   return (
     <div>
@@ -47,6 +29,7 @@ function App() {
         {/* Public Routes */}
         <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
         <Route path="/signup" element={<Signup setIsLoggedIn={setIsLoggedIn} />} />
+        <Route path="/otp" element={<Otp />} />
 
         {/* Protected Routes */}
         {isLoggedIn ? (
