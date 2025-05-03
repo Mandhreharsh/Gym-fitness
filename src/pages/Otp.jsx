@@ -20,7 +20,7 @@ const Otp = () => {
       });
 
       toast.success(res.data.message || "OTP verified successfully");
-      navigate("/login");
+      navigate("/");
     } catch (err) {
       toast.error(err.response?.data?.message || "Invalid OTP");
     }
