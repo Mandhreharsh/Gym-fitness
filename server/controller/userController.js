@@ -4,7 +4,7 @@ import { User } from "../models/userSchema.js";
 import { generateToken } from "../utils/jwtToken.js";
 import sendEmail from "../utils/sendEmail.js";
 
-// ------------------ Register with OTP ------------------
+// ------------------ Register (NO OTP) ------------------
 export const Register = catchAsyncErrors(async (req, res, next) => {
     const { email, password, confirmPassword } = req.body;
 
@@ -18,24 +18,15 @@ export const Register = catchAsyncErrors(async (req, res, next) => {
         return next(new ErrorHandler("User already registered", 400));
     }
 
-    // Generate 6-digit OTP
-    const otp = Math.floor(100000 + Math.random() * 900000).toString();
-
-    // Create user with OTP and timestamp
     user = await User.create({
         email,
         password,
         confirmPassword,
-        otp,
-        otpCreatedAt: Date.now(),
     });
 
-    // Send OTP email
-    await sendEmail(email, `Your OTP is ${otp}`);
-
-    res.status(200).json({
+    res.status(201).json({
         success: true,
-        message: "OTP sent to your email",
+        message: "User registered successfully. Please login to receive OTP.",
     });
 });
 
