@@ -9,11 +9,32 @@ import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [loading, setLoading] = useState(true); // <-- to handle loading state
+
+  // Check login status when app loads
+  useEffect(() => {
+    const checkLogin = async () => {
+      try {
+        const res = await axios.get("https://gym-fitness-2cj9.onrender.com/api/v1/user/me", {
+          withCredentials: true,
+        });
+        setIsLoggedIn(true);
+      } catch (err) {
+        setIsLoggedIn(false);
+      } finally {
+        setLoading(false);
+      }
+    };
+    checkLogin();
+  }, []);
+
+  if (loading) return <div>Loading...</div>; // Optional: customize this
 
   return (
     <div>
@@ -39,7 +60,6 @@ function App() {
             <Route path="/contact" element={<Contact />} />
           </>
         ) : (
-          // Redirect any route to /login if not logged in
           <Route path="*" element={<Navigate to="/login" />} />
         )}
       </Routes>

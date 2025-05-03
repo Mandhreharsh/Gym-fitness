@@ -55,3 +55,16 @@ export const Logout = catchAsyncErrors(async (req, res, next) =>{
         message: "User Logged out successfully",
     });
  });
+
+
+ export const getMyProfile = catchAsyncErrors(async (req, res, next) => {
+    const user = await User.findById(req.user._id); // user._id comes from decoded token
+    if (!user) {
+        return next(new ErrorHandler("User not found", 404));
+    }
+
+    res.status(200).json({
+        success: true,
+        user,
+    });
+});
