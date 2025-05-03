@@ -105,3 +105,33 @@ export const Logout = catchAsyncErrors(async (req, res, next) => {
             message: "User logged out successfully",
         });
 });
+
+
+
+// ------------------ Resend OTP ------------------
+export const resendOtp = catchAsyncErrors(async (req, res, next) => {
+    const { email } = req.body;
+
+    if (!email) {
+        return next(new ErrorHandler("Please provide an email", 400));
+    }
+
+    const user = await User.findOne({ email });
+
+    if (!user) {
+        return next(new ErrorHandler("User not found", 404));
+    }
+
+    const otp = Math.floor(100000 + Math.random() * 900000).toString();
+    user.otp = otp;
+    user.otpCreatedAt = Date.now();
+    await user.save();
+
+    await sendEmail(email, `Your OTP is ${otp}`);
+
+    res.status(200).json({
+        success: true,
+        message: "OTP resent successfully",
+    });
+});
+

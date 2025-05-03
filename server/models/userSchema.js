@@ -69,4 +69,20 @@ userSchema.methods.isOtpValid = function (enteredOtp) {
     return this.otp === enteredOtp && otpAge <= 5;
 };
 
+// 🔐 Method to generate and save OTP for login
+userSchema.methods.generateOtp = async function () {
+    const otp = Math.floor(100000 + Math.random() * 900000).toString(); // generate OTP
+    this.otp = otp;
+    this.otpCreatedAt = Date.now();
+    await this.save();
+    return otp;
+};
+
+// 🔐 Method to reset OTP fields (after successful verification)
+userSchema.methods.clearOtp = async function () {
+    this.otp = undefined;
+    this.otpCreatedAt = undefined;
+    await this.save();
+};
+
 export const User = mongoose.model("User", userSchema);

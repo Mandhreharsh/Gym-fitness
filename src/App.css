@@ -1885,8 +1885,12 @@
   width: 100%;
   text-align: center;
 }
+}
 
-
-
-
+@media (max-width: 400px) {
+  .otp-input {
+    width: 2.2rem !important;
+    height: 2.2rem !important;
+    font-size: 1rem !important;
+  }
 }
