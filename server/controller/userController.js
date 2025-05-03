@@ -68,7 +68,7 @@ export const login = catchAsyncErrors(async (req, res, next) => {
         return next(new ErrorHandler("Please provide all details", 400));
     }
 
-    const user = await User.findOne({ email }).select("+password");
+    const user = await User.findOne({ email }).select("+password +otp +otpCreatedAt");
 
     if (!user) {
         return next(new ErrorHandler("Invalid email or password", 400));
@@ -79,7 +79,18 @@ export const login = catchAsyncErrors(async (req, res, next) => {
         return next(new ErrorHandler("Invalid email or password", 400));
     }
 
-    // Generate OTP for login verification
+    // Check if OTP is already valid
+    if (user.otp && user.otpCreatedAt) {
+        const otpAge = (Date.now() - user.otpCreatedAt) / (1000 * 60); // in minutes
+        if (otpAge < 5) {
+            return res.status(200).json({
+                success: true,
+                message: "OTP already sent. Please wait before requesting again.",
+            });
+        }
+    }
+
+    // Generate new OTP
     const otp = Math.floor(100000 + Math.random() * 900000).toString();
     user.otp = otp;
     user.otpCreatedAt = Date.now();
@@ -92,6 +103,7 @@ export const login = catchAsyncErrors(async (req, res, next) => {
         message: "OTP sent to your email for verification",
     });
 });
+
 
 // ------------------ Logout ------------------
 export const Logout = catchAsyncErrors(async (req, res, next) => {
@@ -116,12 +128,24 @@ export const resendOtp = catchAsyncErrors(async (req, res, next) => {
         return next(new ErrorHandler("Please provide an email", 400));
     }
 
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ email }).select("+otp +otpCreatedAt");
 
     if (!user) {
         return next(new ErrorHandler("User not found", 404));
     }
 
+    // Check if OTP is already valid
+    if (user.otp && user.otpCreatedAt) {
+        const otpAge = (Date.now() - user.otpCreatedAt) / (1000 * 60); // in minutes
+        if (otpAge < 5) {
+            return res.status(200).json({
+                success: true,
+                message: "OTP already sent. Please wait before requesting again.",
+            });
+        }
+    }
+
+    // Generate new OTP
     const otp = Math.floor(100000 + Math.random() * 900000).toString();
     user.otp = otp;
     user.otpCreatedAt = Date.now();
@@ -131,7 +155,6 @@ export const resendOtp = catchAsyncErrors(async (req, res, next) => {
 
     res.status(200).json({
         success: true,
-        message: "OTP resent successfully",
+        message: "New OTP sent successfully.",
     });
 });
-
