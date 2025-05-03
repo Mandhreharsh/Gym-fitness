@@ -79,15 +79,19 @@ const Otp = () => {
 
   const handleResendOtp = async () => {
     try {
-      await axios.post("https://gym-fitness-2cj9.onrender.com/api/v1/user/resend-otp", {
+      const res = await axios.post("https://gym-fitness-2cj9.onrender.com/api/v1/user/resend-otp", {
         email,
       });
-      toast.success("OTP resent successfully");
-      setResendTimer(30); // Disable for 30 seconds
+  
+      toast.success(res.data.message);
+      if (res.data.message.includes("New OTP sent")) {
+        setResendTimer(30); // Disable resend button only if OTP is sent
+      }
     } catch (err) {
       toast.error(err.response?.data?.message || "Failed to resend OTP");
     }
   };
+  
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4 py-10 bg-gradient-to-tl from-[#12100e] to-[#3d3d3d]">
