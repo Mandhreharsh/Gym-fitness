@@ -13,7 +13,9 @@ const app = express();
 config({ path: ".env" });
 
 // ✅ Allowed origin (your deployed frontend domain)
-const allowedOrigins = process.env.ALLOWED_ORIGINS
+const allowedOrigins = [
+  "https://gym-fitness-hmjt.vercel.app"
+];
 
 // ✅ Dynamic CORS configuration
 app.use(
