@@ -134,27 +134,17 @@ export const resendOtp = catchAsyncErrors(async (req, res, next) => {
         return next(new ErrorHandler("User not found", 404));
     }
 
-    // Check if OTP is already valid
-    if (user.otp && user.otpCreatedAt) {
-        const otpAge = (Date.now() - user.otpCreatedAt) / (1000 * 60); // in minutes
-        if (otpAge < 5) {
-            return res.status(200).json({
-                success: true,
-                message: "OTP already sent. Please wait before requesting again.",
-            });
-        }
-    }
-
-    // Generate new OTP
+    // Always generate new OTP
     const otp = Math.floor(100000 + Math.random() * 900000).toString();
     user.otp = otp;
     user.otpCreatedAt = Date.now();
     await user.save();
 
-    await sendEmail(email, `Your OTP is ${otp}`);
+    await sendEmail(email, `Your new OTP is ${otp}`);
 
     res.status(200).json({
         success: true,
         message: "New OTP sent successfully.",
     });
 });
+
