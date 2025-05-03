@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import data from "../data.json";
 import AboutUs from "../components/AboutUs";
 import Overview from "../components/Overview";
@@ -10,11 +10,11 @@ import Footer from "../components/Footer"
 const About = () => {
 
     const [about, setAbout] = useState([]);
-     const [Teams, setTeams] = useState([]);
-     const [study, setStudy] = useState([]);
+    const [Teams, setTeams] = useState([]);
+    const [study, setStudy] = useState([]);
 
 
-    useEffect(() =>{
+    useEffect(() => {
         setAbout(data.Summery);
         setTeams(data.OurTeam);
         setStudy(data.Overview)
@@ -22,11 +22,11 @@ const About = () => {
     }, [])
     return (
         <div>
-           <div>
+            <div>
                 <AboutUs about={about}></AboutUs>
             </div>
             <div>
-                <Overview  study={study}></Overview>
+                <Overview study={study}></Overview>
             </div>
             <div>
                 <TestimonialList></TestimonialList>

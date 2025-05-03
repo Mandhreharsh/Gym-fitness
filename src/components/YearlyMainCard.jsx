@@ -12,7 +12,7 @@ const YearlyMainCard = () => {
 
     }, [])
 
-    return(
+    return (
         <div>
             <YearlyMainCardInfo mainprice={mainprice}></YearlyMainCardInfo>
         </div>

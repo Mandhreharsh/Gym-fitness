@@ -30,7 +30,7 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
                 >
                   {item}
                 </NavLink>
-               
+
               </li>
             )
           )}
@@ -72,9 +72,8 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden fixed inset-0 bg-transparent bg-gradient-to-tl from-[#12100e] to-[#3d3d3d] text-white p-6 flex flex-col items-center gap-6 transform ${
-          isMenuOpen ? "translate-x-0" : "translate-x-full"
-        } transition-transform duration-300 ease-in-out`}
+        className={`lg:hidden fixed inset-0 bg-transparent bg-gradient-to-tl from-[#12100e] to-[#3d3d3d] text-white p-6 flex flex-col items-center gap-6 transform ${isMenuOpen ? "translate-x-0" : "translate-x-full"
+          } transition-transform duration-300 ease-in-out`}
       >
         <button onClick={toggleNavbar} className="self-end">
           <X size={28} />

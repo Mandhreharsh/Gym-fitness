@@ -8,10 +8,10 @@ const Contact = () => {
 
     const [contact, setContact] = useState([]);
 
-   useEffect(() =>{
-       setContact(data.ContactPart);
+    useEffect(() => {
+        setContact(data.ContactPart);
 
-   }, [])
+    }, [])
 
     return (
         <div>

@@ -9,10 +9,10 @@ import 'swiper/css/pagination';
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import Quote from "../images/quote.png"
-import testimonials1 from  "../images/testimonials1.png"
-import testimonials2 from  "../images/testimonials2.png"
-import testimonials3 from  "../images/testimonials3.png"
-import testimonials4 from  "../images/testimonials4.png"
+import testimonials1 from "../images/testimonials1.png"
+import testimonials2 from "../images/testimonials2.png"
+import testimonials3 from "../images/testimonials3.png"
+import testimonials4 from "../images/testimonials4.png"
 
 const Testimonials = () => {
     return (
@@ -99,8 +99,8 @@ const Testimonials = () => {
                                 </div>
                             </div>
                         </SwiperSlide>
-                       
-                    
+
+
                     </Swiper>
                 </div>
             </div>

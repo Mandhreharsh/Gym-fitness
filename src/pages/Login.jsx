@@ -8,7 +8,7 @@ const Login = ({ setIsLoggedIn }) => {
 
     return (
         <Template formtype="login"
-        setIsLoggedIn={setIsLoggedIn} />
+            setIsLoggedIn={setIsLoggedIn} />
     )
 }
 

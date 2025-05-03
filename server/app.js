@@ -7,17 +7,14 @@ import { dbConnection } from "./database/dbConnection.js";
 import messageRouter from "./router/messageRouter.js";
 import { errorMiddleware } from "./middlewares/errorMiddleware.js";
 import userRouter from "./router/userRouter.js";
-// import appointmentRouter from "./router/appointmentRouter.js";
 
 const app = express();
 config({ path: ".env" });
 
-// ✅ Allowed origin (your deployed frontend domain)
 const allowedOrigins = [
   "https://gym-fitness-hmjt.vercel.app"
 ];
 
-// ✅ Dynamic CORS configuration
 app.use(
   cors({
     origin: function (origin, callback) {
@@ -47,7 +44,6 @@ app.use(
 // Routes
 app.use("/api/v1/message", messageRouter);
 app.use("/api/v1/user", userRouter);
-// app.use("/api/v1/appointment", appointmentRouter);
 
 app.get("/", (req, res) => {
   res.send("Server is running...");
@@ -56,7 +52,6 @@ app.get("/", (req, res) => {
 // Connect DB
 dbConnection();
 
-// Error middleware
 app.use(errorMiddleware);
 
 export default app;

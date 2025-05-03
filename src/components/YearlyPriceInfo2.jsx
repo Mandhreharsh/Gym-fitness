@@ -1,41 +1,41 @@
 import React from "react";
 import price from "../images/price2.png";
 
-const YearlyPriceInfo2 = ({price2}) => {
+const YearlyPriceInfo2 = ({ price2 }) => {
     return (
         <div>
-        {
-            price2.map((subscription2, index) => {
-                return (
-                    <div key={subscription2} {...subscription2}>
+            {
+                price2.map((subscription2, index) => {
+                    return (
+                        <div key={subscription2} {...subscription2}>
 
-                        <h1 className="text-center text-yellow500 oswald mt-[44px] text-[30px]">{subscription2.heading}</h1>
-                        <h6 className=" text-white oswald text-[14px] mt-[-8px] text-center">{subscription2.coach}</h6>
-                        <div className="flex flex-row items-center justify-center">
-                            <img className="h-[57px] w-[40px] mt-[6px]" src={subscription2.image} alt="" />
-                            <h1 className="text-center oswald text-yellow500 mt-[5px] text-[60px]">{subscription2.price1}</h1>
+                            <h1 className="text-center text-yellow500 oswald mt-[44px] text-[30px]">{subscription2.heading}</h1>
+                            <h6 className=" text-white oswald text-[14px] mt-[-8px] text-center">{subscription2.coach}</h6>
+                            <div className="flex flex-row items-center justify-center">
+                                <img className="h-[57px] w-[40px] mt-[6px]" src={subscription2.image} alt="" />
+                                <h1 className="text-center oswald text-yellow500 mt-[5px] text-[60px]">{subscription2.price1}</h1>
+                            </div>
+                            <li className=" text-center text-white text-[14px] oswald list-none mt-[-15px]">{subscription2.year}</li>
+                            <li className="text-center list-none oswald1 text-[16px] text-white mt-[30px]">{subscription2.heading2}</li>
+                            <div className="flex flex-column mt-[8px] justify-center">
+                                <span className="bg-yellow500 w-[50px] h-[0.5px]"></span>
+                            </div>
+                            <ul className="mt-[12px]">
+                                <li className="text-white noto-sans text-[14px] leading-[11px] text-center">{subscription2.description1}</li>
+                                <li className="text-white noto-sans text-[14px]  text-center"> {subscription2.description2}</li>
+                                <li className="text-white noto-sans text-[14px] leading-[11px] text-center">{subscription2.description3}</li>
+                            </ul>
+                            <div className="flex flex-column justify-center mt-[29px]">
+                                <button className="text-white bg-yellow500 h-[45px] w-[125px] text-[15px] oswald1 rounded-full">{subscription2.btn}</button>
+                            </div>
+                            <div className=" absolute opacity-15 top-[245px] left-[140px] h-[200px] w-[200px]">
+                                <img src={price} alt="" />
+                            </div>
                         </div>
-                        <li className=" text-center text-white text-[14px] oswald list-none mt-[-15px]">{subscription2.year}</li>
-                        <li className="text-center list-none oswald1 text-[16px] text-white mt-[30px]">{subscription2.heading2}</li>
-                        <div className="flex flex-column mt-[8px] justify-center">
-                            <span className="bg-yellow500 w-[50px] h-[0.5px]"></span>
-                        </div>
-                        <ul className="mt-[12px]">
-                            <li className="text-white noto-sans text-[14px] leading-[11px] text-center">{subscription2.description1}</li>
-                            <li className="text-white noto-sans text-[14px]  text-center"> {subscription2.description2}</li>
-                            <li className="text-white noto-sans text-[14px] leading-[11px] text-center">{subscription2.description3}</li>
-                        </ul>
-                        <div className="flex flex-column justify-center mt-[29px]">
-                            <button className="text-white bg-yellow500 h-[45px] w-[125px] text-[15px] oswald1 rounded-full">{subscription2.btn}</button>
-                        </div>
-                        <div className=" absolute opacity-15 top-[245px] left-[140px] h-[200px] w-[200px]">
-                            <img src={price} alt="" />
-                        </div>
-                    </div>
-                )
-            })
-        }
-    </div>
+                    )
+                })
+            }
+        </div>
     )
 }
 

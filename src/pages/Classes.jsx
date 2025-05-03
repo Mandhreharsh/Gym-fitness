@@ -11,7 +11,7 @@ const Classes = () => {
     const [classesList, setClassesList] = useState([]);
     const [time, setTime] = useState([]);
 
-    useEffect(() =>{
+    useEffect(() => {
         setClassesHeading(data.ClassesHeading);
         setClassesList(data.ClassesList);
         setTime(data.Schedule)

@@ -1,9 +1,4 @@
 import React from "react";
-// import Slider from 'react-slick';
-// import "slick-carousel/slick/slick.css"
-// import "slick-carousel/slick/slick-theme.css"
-import Mainbg from "../images/mainbg.jpg"
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
@@ -23,32 +18,32 @@ const OurTeam = ({ Teams }) => {
             <div className="ourteamsection flex flex-row h-[500px] w-[1150px] mt-[103px] gap-[10px] justify-between">
                 {/* first */}
                 <div className="ourteamsection1 h-[500px]">
-                <div className="flex flex-col">
-                <div className="bg-white w-[0.5px] ml-[20px] h-[50px]"></div>
-                    <div className="flex flex-col ml-[57px] mt-[-50px]">
-                        <span className="text-white oswald1 leading-[1em] text-[20px]">Our Strongest Team</span>
-                        <span className="text-yellow500 oswald2 leading-[38px] text-[30px]">MEET EXPERT TRAINERS</span>
-                    </div>
-
-                    <div className="ourteamheading  relative">
-                        <div>
-                            {
-                                Teams.map((Team, index) => {
-                                    return (
-                                        <div className="ourteamtxt mt-[49px] ml-[57px] flex flex-col w-[470px]" key={Team} {...Team}>
-                                            <p className="text-white text-[14px] noto-sans">{Team.description}</p>
-                                            <p className="text-white text-[14px] mt-[-14px] noto-sans">{Team.description1}</p>
-                                        </div>
-                                    )
-                                })
-                            }
+                    <div className="flex flex-col">
+                        <div className="bg-white w-[0.5px] ml-[20px] h-[50px]"></div>
+                        <div className="flex flex-col ml-[57px] mt-[-50px]">
+                            <span className="text-white oswald1 leading-[1em] text-[20px]">Our Strongest Team</span>
+                            <span className="text-yellow500 oswald2 leading-[38px] text-[30px]">MEET EXPERT TRAINERS</span>
                         </div>
 
-                        <div className="ml-[57px] mt-[51px]">
-                            <button className="text-white bg-yellow500 w-[170px] h-[45px] oswald1 rounded-[40px] text-[15px]">MORE TRAINERS</button>
+                        <div className="ourteamheading  relative">
+                            <div>
+                                {
+                                    Teams.map((Team, index) => {
+                                        return (
+                                            <div className="ourteamtxt mt-[49px] ml-[57px] flex flex-col w-[470px]" key={Team} {...Team}>
+                                                <p className="text-white text-[14px] noto-sans">{Team.description}</p>
+                                                <p className="text-white text-[14px] mt-[-14px] noto-sans">{Team.description1}</p>
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </div>
+
+                            <div className="ml-[57px] mt-[51px]">
+                                <button className="text-white bg-yellow500 w-[170px] h-[45px] oswald1 rounded-[40px] text-[15px]">MORE TRAINERS</button>
+                            </div>
                         </div>
                     </div>
-                </div>
                 </div>
 
 

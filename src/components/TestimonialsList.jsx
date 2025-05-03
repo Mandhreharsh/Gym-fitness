@@ -9,10 +9,10 @@ import 'swiper/css/pagination';
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import Quote from "../images/quote.png";
-import testimonials1 from  "../images/testimonials1.png"
-import testimonials2 from  "../images/testimonials2.png"
-import testimonials3 from  "../images/testimonials3.png"
-import testimonials4 from  "../images/testimonials4.png"
+import testimonials1 from "../images/testimonials1.png"
+import testimonials2 from "../images/testimonials2.png"
+import testimonials3 from "../images/testimonials3.png"
+import testimonials4 from "../images/testimonials4.png"
 
 const TestimonialList = () => {
     return (
@@ -28,7 +28,7 @@ const TestimonialList = () => {
                 </div>
 
                 <div className="TestimonialSectionSwiper">
-                <Swiper
+                    <Swiper
                         slidesPerView={1}
                         loop={Infinity}
                         spaceBetween={200}
@@ -43,60 +43,60 @@ const TestimonialList = () => {
                         modules={[Autoplay, Pagination, Navigation]}
                         className="TestimonialSectionSwiper2 mt-[3px] absolute top-[60px] left-[50px] w-[400px] h-[420px] rounded-xl " >
 
-                    <SwiperSlide className="SwiperSlide2">
-                        <div className=' relative  '>
-                            <img className="h-[50px] w-[50px]" src={Quote} alt="" />
-                            <p className="mt-[10px] text-white text-[14px] noto-sans">I’ve been a member of Fitness for over a year, and it’s transformed my life! The coaches are incredibly knowledgeable and really take the time to understand my goals.</p>
-                            <div className="flex flex-row gap-[10px] mt-[60px]">
-                                <img className="h-[40px] w-[40px] bg-black rounded-full" src={testimonials1} alt="" />
-                                <div className="flex flex-col leading-[20px]">
-                                    <h1 className="text-white oswald1 text-white text-[15px]">John D.</h1>
-                                    <span className="text-white">Athlete Training</span>
+                        <SwiperSlide className="SwiperSlide2">
+                            <div className=' relative  '>
+                                <img className="h-[50px] w-[50px]" src={Quote} alt="" />
+                                <p className="mt-[10px] text-white text-[14px] noto-sans">I’ve been a member of Fitness for over a year, and it’s transformed my life! The coaches are incredibly knowledgeable and really take the time to understand my goals.</p>
+                                <div className="flex flex-row gap-[10px] mt-[60px]">
+                                    <img className="h-[40px] w-[40px] bg-black rounded-full" src={testimonials1} alt="" />
+                                    <div className="flex flex-col leading-[20px]">
+                                        <h1 className="text-white oswald1 text-white text-[15px]">John D.</h1>
+                                        <span className="text-white">Athlete Training</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className="SwiperSlide2">
-                        <div className=' relative '>
-                            <img className="h-[50px] w-[50px]" src={Quote} alt="" />
-                            <p className="mt-[10px] text-white text-[14px] noto-sans">I’ve been doing Hot Yoga at Fitness for the past few months, and it’s been a game-changer. I feel more flexible, less stressed, and my overall fitness has improved.</p>
-                            <div className="flex flex-row gap-[10px] mt-[60px]">
-                                <img className="h-[40px] w-[40px] bg-black rounded-full" src={testimonials2} alt="" />
-                                <div className="flex flex-col leading-[20px]">
-                                    <h1 className="text-white oswald1 text-white text-[15px]">Michael S.</h1>
-                                    <span className="text-white">Athlete Training</span>
+                        </SwiperSlide>
+                        <SwiperSlide className="SwiperSlide2">
+                            <div className=' relative '>
+                                <img className="h-[50px] w-[50px]" src={Quote} alt="" />
+                                <p className="mt-[10px] text-white text-[14px] noto-sans">I’ve been doing Hot Yoga at Fitness for the past few months, and it’s been a game-changer. I feel more flexible, less stressed, and my overall fitness has improved.</p>
+                                <div className="flex flex-row gap-[10px] mt-[60px]">
+                                    <img className="h-[40px] w-[40px] bg-black rounded-full" src={testimonials2} alt="" />
+                                    <div className="flex flex-col leading-[20px]">
+                                        <h1 className="text-white oswald1 text-white text-[15px]">Michael S.</h1>
+                                        <span className="text-white">Athlete Training</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className="SwiperSlide2">
-                        <div className=' relative '>
-                            <img className="h-[50px] w-[50px]" src={Quote} alt="" />
-                            <p className="mt-[10px] text-white text-[14px] noto-sans">I joined Fitness to lose weight, and not only have I seen fantastic results, but I’ve also gained so much confidence. The trainers helped me create a customized fitness plan.</p>
-                            <div className="flex flex-row gap-[10px] mt-[60px]">
-                                <img className="h-[40px] w-[40px] bg-black rounded-full" src={testimonials3} alt="" />
-                                <div className="flex flex-col leading-[20px]">
-                                    <h1 className="text-white oswald1 text-white text-[15px]">Sophia T.</h1>
-                                    <span className="text-white">Athlete Training</span>
+                        </SwiperSlide>
+                        <SwiperSlide className="SwiperSlide2">
+                            <div className=' relative '>
+                                <img className="h-[50px] w-[50px]" src={Quote} alt="" />
+                                <p className="mt-[10px] text-white text-[14px] noto-sans">I joined Fitness to lose weight, and not only have I seen fantastic results, but I’ve also gained so much confidence. The trainers helped me create a customized fitness plan.</p>
+                                <div className="flex flex-row gap-[10px] mt-[60px]">
+                                    <img className="h-[40px] w-[40px] bg-black rounded-full" src={testimonials3} alt="" />
+                                    <div className="flex flex-col leading-[20px]">
+                                        <h1 className="text-white oswald1 text-white text-[15px]">Sophia T.</h1>
+                                        <span className="text-white">Athlete Training</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className="SwiperSlide2">
-                        <div className=' relative  '>
-                            <img className="h-[50px] w-[50px]" src={Quote} alt="" />
-                            <p className="mt-[10px] text-white text-[14px] noto-sans">The team at Fitness is incredibly supportive. They’re always there to motivate me, whether I’m lifting weights or working on my cardio.</p>
-                            <div className="flex flex-row gap-[10px] mt-[60px]">
-                                <img className="h-[40px] w-[40px] bg-black rounded-full" src={testimonials4} alt="" />
-                                <div className="flex flex-col leading-[20px]">
-                                    <h1 className="text-white oswald1 text-white text-[15px]">David W.</h1>
-                                    <span className="text-white">Athlete Training</span>
+                        </SwiperSlide>
+                        <SwiperSlide className="SwiperSlide2">
+                            <div className=' relative  '>
+                                <img className="h-[50px] w-[50px]" src={Quote} alt="" />
+                                <p className="mt-[10px] text-white text-[14px] noto-sans">The team at Fitness is incredibly supportive. They’re always there to motivate me, whether I’m lifting weights or working on my cardio.</p>
+                                <div className="flex flex-row gap-[10px] mt-[60px]">
+                                    <img className="h-[40px] w-[40px] bg-black rounded-full" src={testimonials4} alt="" />
+                                    <div className="flex flex-col leading-[20px]">
+                                        <h1 className="text-white oswald1 text-white text-[15px]">David W.</h1>
+                                        <span className="text-white">Athlete Training</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </SwiperSlide>
-               
-                </Swiper>
+                        </SwiperSlide>
+
+                    </Swiper>
                 </div>
 
             </div>

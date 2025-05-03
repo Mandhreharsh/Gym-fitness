@@ -14,9 +14,9 @@ const Card2 = () => {
     }, [])
 
     return (
-       <div>
+        <div>
             <PriceInfo2 price2={price2}></PriceInfo2>
-       </div>
+        </div>
     )
 }
 

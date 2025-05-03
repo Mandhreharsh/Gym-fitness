@@ -11,11 +11,11 @@ const Pricing = () => {
     const [pricingHead, setPricingHead] = useState([]);
 
 
-   useEffect(() =>{
-       setPricingHead(data.pricingPart);
+    useEffect(() => {
+        setPricingHead(data.pricingPart);
 
 
-   }, [])
+    }, [])
     return (
         <div>
             <div>
@@ -27,7 +27,7 @@ const Pricing = () => {
             </div>
 
             <div>
-            <SuccessfullList></SuccessfullList>
+                <SuccessfullList></SuccessfullList>
             </div>
 
             <div>

@@ -14,9 +14,9 @@ const YearlyCard2 = () => {
     }, [])
 
     return (
-       <div>
+        <div>
             <YearlyPriceInfo2 price2={price2}></YearlyPriceInfo2>
-       </div>
+        </div>
     )
 }
 

@@ -5,8 +5,8 @@ const Classes = ({ classesList }) => {
     const Navigate = useNavigate();
 
     const changehandler = () => {
-       Navigate("/pricing");
-      };
+        Navigate("/pricing");
+    };
     return (
         <div className="ClassesSectionMain w-full h-[1250px] relative bg-transparent bg-gradient-to-tl from-[#12100e] to-[#3d3d3d]">
             <div className="ClassesSection1">
@@ -43,4 +43,3 @@ const Classes = ({ classesList }) => {
 }
 
 export default Classes;
-// absolute top-[109px] left-[759px]

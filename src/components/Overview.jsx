@@ -1,17 +1,9 @@
 import React from "react";
-// import Slider from 'react-slick';
-// import "slick-carousel/slick/slick.css"
-// import "slick-carousel/slick/slick-theme.css"
-import Mainbg from "../images/mainbg.jpg"
-
-import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 // import required modules
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import { Grid } from 'swiper/modules';
 import OverviewImage from "../images/blog4.png";
 
 const Overview = ({ study }) => {
@@ -41,7 +33,7 @@ const Overview = ({ study }) => {
                             }
                         </div>
 
-                        
+
                     </div>
                 </div>
 

@@ -2,13 +2,10 @@ import React from "react";
 import Location from "../images/location.png";
 import Email from "../images/email.png";
 import Phone1 from "../images/phone.png"
-import Linkedin from "../images/linkedin.png";
-import Instagram from "../images/instagram.png";
 import Facebook from "../images/facebook.png";
 import { useState } from 'react';
 import { toast } from "react-hot-toast";
 import axios from "axios";
-import Mainbg from "../images/mainbg.jpg"
 import LinkedIn from "../images/linked in.png";
 import Twitter from "../images/twitter.png";
 

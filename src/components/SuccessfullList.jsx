@@ -4,9 +4,9 @@ import Successfull from "./Successful";
 
 const SuccessfullList = () => {
 
-     const [success, setSuccess] = useState([]);
+    const [success, setSuccess] = useState([]);
 
-     useEffect(() =>{
+    useEffect(() => {
         setSuccess(data.Successfull);
     }, [])
     return (

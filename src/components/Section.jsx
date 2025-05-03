@@ -9,8 +9,8 @@ const Section = () => {
     const Navigate = useNavigate();
 
     const changehandler = () => {
-       Navigate("/login")
-      };
+        Navigate("/login")
+    };
     return (
         <div className=" bg-main2 bg-repeat bg-cover w-full h-[800px] relative mt-[-70px] md:w-full">
             <div className="flex justify-center">
@@ -49,9 +49,9 @@ const Section = () => {
                         </span>
 
 
-                    <div className=" sectionbtn flex justify-center">
-                        <button className="text-white bg-yellow500 w-[150px] h-[45px] oswald1 rounded-[40px] text-[15px]" onClick={changehandler}>KNOW MORE</button>
-                    </div>
+                        <div className=" sectionbtn flex justify-center">
+                            <button className="text-white bg-yellow500 w-[150px] h-[45px] oswald1 rounded-[40px] text-[15px]" onClick={changehandler}>KNOW MORE</button>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -3,7 +3,7 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 
 const Loginform = ({ setIsLoggedIn }) => {
 
@@ -25,12 +25,6 @@ const Loginform = ({ setIsLoggedIn }) => {
 
     async function submitHandler(event) {
         event.preventDefault();
-        // setIsLoggedIn(true);
-        // console.log("Printing the formDtata");
-        // console.log(formData)
-        // navigate("/home")
-
-        // Check if fields are empty
         if (!formData.email || !formData.password) {
             toast.error("Please fill all fields");
             return;
@@ -86,7 +80,7 @@ const Loginform = ({ setIsLoggedIn }) => {
 
                         <span className='absolute right-5 top-[28px] cursor-pointer'
                             onClick={() => setShowPassword((prev) => !prev)}>
-                            {showPassword ? (<AiOutlineEyeInvisible fontSize={24} fill='#AFB2BF' />) : (<AiOutlineEye fontSize={24} fill='#AFB2BF' />)}
+                            {showPassword ? (<AiOutlineEye fontSize={24} fill='#AFB2BF' />) : (<AiOutlineEyeInvisible fontSize={24} fill='#AFB2BF' />)}
                         </span>
                     </div>
                 </div>

@@ -7,35 +7,35 @@ import Footer from "../components/Footer"
 
 const Trainers = () => {
 
-        const [classesHeading, setClassesHeading] = useState([]);
-        const [Allfeature, setAllFeature] = useState([]);
-        const [AllTrainers, setAllTrainers] = useState([]);
-    
-        useEffect(() =>{
-            setClassesHeading(data.ClassesHeading);
-            setAllFeature(data.AwsomeFeatures);
-            setAllTrainers(data.ExpertTrainers);
-        }, [])
-    
+  const [classesHeading, setClassesHeading] = useState([]);
+  const [Allfeature, setAllFeature] = useState([]);
+  const [AllTrainers, setAllTrainers] = useState([]);
 
-    return (
-        <div>
-          <div>
-            <TrainingSection classesHeading={classesHeading}></TrainingSection>
-          </div>
+  useEffect(() => {
+    setClassesHeading(data.ClassesHeading);
+    setAllFeature(data.AwsomeFeatures);
+    setAllTrainers(data.ExpertTrainers);
+  }, [])
 
-          <div>
-            <TrainingFeature Allfeature={Allfeature}></TrainingFeature>
-          </div>
 
-          <div>
-            <OurTrainers AllTrainers={AllTrainers}></OurTrainers>
-          </div>
-          <div>
-            <Footer></Footer>
-          </div>
-        </div>
-    )
+  return (
+    <div>
+      <div>
+        <TrainingSection classesHeading={classesHeading}></TrainingSection>
+      </div>
+
+      <div>
+        <TrainingFeature Allfeature={Allfeature}></TrainingFeature>
+      </div>
+
+      <div>
+        <OurTrainers AllTrainers={AllTrainers}></OurTrainers>
+      </div>
+      <div>
+        <Footer></Footer>
+      </div>
+    </div>
+  )
 }
 
 export default Trainers;
