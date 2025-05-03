@@ -34,7 +34,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         select: false,
     },
-    otpExpires: {
+    otpCreatedAt: {
         type: Date,
         select: false,
     },
@@ -59,6 +59,14 @@ userSchema.methods.generateJsonWebToken = function () {
     return jwt.sign({ id: this._id }, process.env.JWT_SECRET_KEY, {
         expiresIn: process.env.JWT_EXPIRES,
     });
+};
+
+// 🔐 OTP verification helper method
+userSchema.methods.isOtpValid = function (enteredOtp) {
+    if (!this.otp || !this.otpCreatedAt) return false;
+    const now = new Date();
+    const otpAge = (now - this.otpCreatedAt) / (1000 * 60); // in minutes
+    return this.otp === enteredOtp && otpAge <= 5;
 };
 
 export const User = mongoose.model("User", userSchema);

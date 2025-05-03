@@ -2,8 +2,7 @@ import { catchAsyncErrors } from "../middlewares/catchAsyncErrors.js";
 import ErrorHandler from "../middlewares/errorMiddleware.js";
 import { User } from "../models/userSchema.js";
 import { generateToken } from "../utils/jwtToken.js";
-import sendEmail from "../utils/sendEmail.js"; // email utility
-import crypto from "crypto";
+import sendEmail from "../utils/sendEmail.js";
 
 // ------------------ Register with OTP ------------------
 export const Register = catchAsyncErrors(async (req, res, next) => {
@@ -19,15 +18,16 @@ export const Register = catchAsyncErrors(async (req, res, next) => {
         return next(new ErrorHandler("User already registered", 400));
     }
 
-    // Generate a 6-digit OTP
+    // Generate 6-digit OTP
     const otp = Math.floor(100000 + Math.random() * 900000).toString();
 
+    // Create user with OTP and timestamp
     user = await User.create({
         email,
         password,
         confirmPassword,
         otp,
-        otpExpires: Date.now() + 5 * 60 * 1000, // 5 mins from now
+        otpCreatedAt: Date.now(),
     });
 
     // Send OTP email
@@ -47,26 +47,29 @@ export const verifyOtp = catchAsyncErrors(async (req, res, next) => {
         return next(new ErrorHandler("Please provide email and OTP", 400));
     }
 
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ email }).select("+otp +otpCreatedAt");
 
-    if (!user) {
-        return next(new ErrorHandler("User not found", 404));
+    if (!user || !user.otp || !user.otpCreatedAt) {
+        return next(new ErrorHandler("OTP not found", 404));
     }
 
-    if (user.otp !== otp || user.otpExpires < Date.now()) {
+    const now = new Date();
+    const otpAge = (now - user.otpCreatedAt) / (1000 * 60); // in minutes
+
+    if (user.otp !== otp || otpAge > 5) {
         return next(new ErrorHandler("Invalid or expired OTP", 400));
     }
 
     // Clear OTP fields
     user.otp = undefined;
-    user.otpExpires = undefined;
+    user.otpCreatedAt = undefined;
     await user.save();
 
     // Login now
     generateToken(user, "OTP verified successfully!", 200, res);
 });
 
-// ------------------ Login ------------------
+// ------------------ Login (send OTP) ------------------
 export const login = catchAsyncErrors(async (req, res, next) => {
     const { email, password } = req.body;
 
@@ -85,7 +88,18 @@ export const login = catchAsyncErrors(async (req, res, next) => {
         return next(new ErrorHandler("Invalid email or password", 400));
     }
 
-    generateToken(user, "User logged in successfully", 200, res);
+    // Generate OTP for login verification
+    const otp = Math.floor(100000 + Math.random() * 900000).toString();
+    user.otp = otp;
+    user.otpCreatedAt = Date.now();
+    await user.save();
+
+    await sendEmail(email, `Your OTP is ${otp}`);
+
+    res.status(200).json({
+        success: true,
+        message: "OTP sent to your email for verification",
+    });
 });
 
 // ------------------ Logout ------------------
@@ -100,4 +114,3 @@ export const Logout = catchAsyncErrors(async (req, res, next) => {
             message: "User logged out successfully",
         });
 });
-
