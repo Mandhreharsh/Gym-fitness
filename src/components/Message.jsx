@@ -22,7 +22,7 @@ const Message = () => {
         e.preventDefault();
         try {
             await axios.post(
-                `${process.env.REACT_APP_BASE_URL}/api/v1/message/send`,
+                "https://gym-fitness-iovs.onrender.com/api/v1/message/send",
                 { firstName, lastName, Phone, email, message },
                 {
                     withCredentials: true,

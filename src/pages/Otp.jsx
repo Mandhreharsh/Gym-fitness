@@ -63,26 +63,23 @@ const Otp = () => {
   const handleVerifyOtp = async (e) => {
     e.preventDefault();
     const fullOtp = otp.join("");
-  
+
     try {
-      const verifyOtpUrl = `${process.env.REACT_APP_BASE_URL}/api/v1/user/verify-otp`;
-  
-      const res = await axios.post(verifyOtpUrl, {
+      const res = await axios.post("https://gym-fitness-iovs.onrender.com/api/v1/user/verify-otp", {
         email,
         otp: fullOtp,
       });
-  
+
       toast.success(res.data.message || "OTP verified successfully");
       navigate("/");
     } catch (err) {
       toast.error(err.response?.data?.message || "Invalid OTP");
     }
   };
-  
 
   const handleResendOtp = async () => {
     try {
-      await axios.post(`${process.env.REACT_APP_BASE_URL}/api/v1/user/resend-otp`, {
+      await axios.post("https://gym-fitness-iovs.onrender.com/api/v1/user/resend-otp", {
         email,
       });
       toast.success("OTP resent successfully");

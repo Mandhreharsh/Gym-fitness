@@ -12,7 +12,9 @@ const app = express();
 config({ path: ".env" });
 
 const allowedOrigins = [
-  process.env.REACT_APP_ALLOWED_ORIGIN, 
+  "https://gym-fitness-lemon.vercel.app", {
+    withCredentials: true,
+  }
 ];
 
 app.use(
@@ -24,28 +26,34 @@ app.use(
         callback(new Error("Not allowed by CORS"));
       }
     },
-    credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: true,
   })
 );
 
-// Middleware
+// Middlewares
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(fileUpload({ useTempFiles: true, tempFileDir: "./tmp/" }));
+
+app.use(
+  fileUpload({
+    useTempFiles: true,
+    tempFileDir: "./tmp/",
+  })
+);
 
 // Routes
 app.use("/api/v1/message", messageRouter);
 app.use("/api/v1/user", userRouter);
 
-// Root route
 app.get("/", (req, res) => {
   res.send("Server is running...");
 });
 
-// Connect DB and use error middleware
+// Connect DB
 dbConnection();
+
 app.use(errorMiddleware);
 
 export default app;
