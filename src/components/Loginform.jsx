@@ -22,7 +22,7 @@ const Loginform = ({ setIsLoggedIn }) => {
         }
 
         try {
-            const response = await axios.post("https://gym-fitness-nhc9.onrender.com/api/v1/user/login", {
+            const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/api/v1/user/login`, {
                 email: formData.email,
                 password: formData.password
             });

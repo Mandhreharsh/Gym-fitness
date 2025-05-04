@@ -11,11 +11,7 @@ import userRouter from "./router/userRouter.js";
 const app = express();
 config({ path: ".env" });
 
-const allowedOrigins = [
-  "https://gym-fitness-hmjt.vercel.app", {
-    withCredentials: true,
-  }
-];
+const allowedOrigins = [process.env.REACT_APP_ALLOWED_ORIGIN];
 
 app.use(
   cors({
@@ -26,10 +22,11 @@ app.use(
         callback(new Error("Not allowed by CORS"));
       }
     },
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   })
 );
+
 
 // Middlewares
 app.use(cookieParser());
