@@ -65,7 +65,7 @@ const Otp = () => {
     const fullOtp = otp.join("");
 
     try {
-      const res = await axios.post("https://gym-fitness-2cj9.onrender.com/api/v1/user/verify-otp", {
+      const res = await axios.post("https://gym-fitness-nhc9.onrender.com/api/v1/user/verify-otp", {
         email,
         otp: fullOtp,
       });
@@ -79,7 +79,7 @@ const Otp = () => {
 
   const handleResendOtp = async () => {
     try {
-      await axios.post("https://gym-fitness-2cj9.onrender.com/api/v1/user/resend-otp", {
+      await axios.post("https://gym-fitness-nhc9.onrender.com/api/v1/user/resend-otp", {
         email,
       });
       toast.success("OTP resent successfully");
