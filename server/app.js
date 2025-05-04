@@ -12,9 +12,7 @@ const app = express();
 config({ path: ".env" });
 
 const allowedOrigins = [
-  "https://gym-fitness-lemon.vercel.app", {
-    withCredentials: true,
-  }
+  "https://gym-fitness-lemon.vercel.app"
 ];
 
 app.use(
